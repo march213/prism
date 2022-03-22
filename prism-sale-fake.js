@@ -1,26 +1,23 @@
 class PrismSale {
-  constructor () {
-    this.totalSales = 0
-    this.maxSales = 100
-    this.owner = "0x..."
-    this.charity = "0x..."
-    this.sales = {
-    }
+  constructor() {
+    this.totalSales = 0;
+    this.maxSales = 100;
+    this.owner = '0x...';
+    this.charity = '0x...';
+    this.sales = {};
   }
 
-  canBuy () {
-    return this.totalSales < this.maxSales
+  canBuy() {
+    return this.totalSales < this.maxSales;
   }
 
-  hasAccess () {
+  hasAccess() {
     //////
-    return this.sales[address]
+    return this.sales[address];
   }
 
   buy() {
     ///
-    this.sales[address] = true
+    this.sales[address] = true;
   }
 }
-
-
