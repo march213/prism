@@ -20,12 +20,14 @@ contract PrismSale {
         return totalSales < maxSales;
     }
 
-    function buy() public returns (bool) {
-        if (canBuy()) {
-            totalSales++;
-            return true;
-        }
+    function buy() public payable returns (bool) {
+        require(canBuy() == true, "Cannot buy this");
+        require(msg.value == 0.01 ether, "You din't send the correct amount");
 
-        return false;
+        payable(owner).transfer((msg.value * 80) / 100);
+        payable(charity).transfer((msg.value * 20) / 100);
+
+        totalSales = totalSales + 1;
+        return true;
     }
 }
